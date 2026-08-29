@@ -41,16 +41,16 @@ CREATE TABLE IF NOT EXISTS understat_shots (
     h_score                 INTEGER NOT NULL,    -- running score before this shot
     a_score                 INTEGER NOT NULL,
     mins_passed             INTEGER NOT NULL,    -- minutes since previous shot
-    h_gamestate              TEXT NOT NULL,       -- Winning / Draw / Losing (home team's view)
-    a_gamestate               TEXT NOT NULL,       -- ... (away team's view)
-    action_team               TEXT NOT NULL,       -- team that took the shot
-    action_team_gamestate      TEXT NOT NULL,
-    opp_team                    TEXT NOT NULL,
-    opp_team_gamestate           TEXT NOT NULL,
-    shot_num                      INTEGER NOT NULL DEFAULT 1,
-    shotontarget_num                INTEGER NOT NULL DEFAULT 0,
-    goal                             INTEGER NOT NULL DEFAULT 0,
-    competition                       TEXT
+    h_gamestate             TEXT NOT NULL,       -- Winning / Draw / Losing (home team's view)
+    a_gamestate             TEXT NOT NULL,       -- ... (away team's view)
+    action_team             TEXT NOT NULL,       -- team that took the shot
+    action_team_gamestate   TEXT NOT NULL,
+    opp_team                TEXT NOT NULL,
+    opp_team_gamestate      TEXT NOT NULL,
+    shot_num                INTEGER NOT NULL DEFAULT 1,
+    shotontarget_num        INTEGER NOT NULL DEFAULT 0,
+    goal                    INTEGER NOT NULL DEFAULT 0,
+    competition              TEXT
 );
 
 CREATE INDEX IF NOT EXISTS idx_shots_match_id ON understat_shots(match_id);

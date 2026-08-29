@@ -38,3 +38,16 @@ DB_PATH = Path(_db_path_env) if _db_path_env else REPO_ROOT / "data" / "fpl.db"
 STATS_LOOKBACK_DAYS = 365
 PLAYER_STATS_LOOKBACK_DAYS = 180
 RECENCY_DECAY_RATE = 0.001  # weight = exp(-RECENCY_DECAY_RATE * days_ago)
+
+# --- League team lists (Understat naming) ---------------------------------
+# Update at the start of each season when promotion/relegation changes.
+# Newly promoted teams have little/no Understat history, so fpl.stats.team_gsxg
+# blends their factors with the average of the just-relegated teams instead.
+PROMOTED_TEAMS = ["Coventry", "Hull", "Ipswich"]
+RELEGATED_TEAMS = ["Burnley", "West Ham", "Wolverhampton Wanderers"]
+CURRENT_SEASON_TEAMS = [
+    "Arsenal", "Aston Villa", "Bournemouth", "Brentford", "Brighton", "Chelsea",
+    "Crystal Palace", "Everton", "Fulham", "Leeds", "Liverpool", "Manchester City",
+    "Manchester United", "Newcastle United", "Nottingham Forest", "Sunderland",
+    "Tottenham",
+] + PROMOTED_TEAMS
