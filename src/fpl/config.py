@@ -37,7 +37,7 @@ DB_PATH = Path(_db_path_env) if _db_path_env else REPO_ROOT / "data" / "fpl.db"
 # decay applied within that window (see fpl.stats).
 STATS_LOOKBACK_DAYS = 365
 PLAYER_STATS_LOOKBACK_DAYS = 180
-RECENCY_DECAY_RATE = 0.001  # weight = exp(-RECENCY_DECAY_RATE * days_ago)
+RECENCY_DECAY_RATE = 0.01  # weight = exp(-RECENCY_DECAY_RATE * days_ago)
 
 # --- League team lists (Understat naming) ---------------------------------
 # Update at the start of each season when promotion/relegation changes.
