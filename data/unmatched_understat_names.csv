@@ -1,22 +1,18 @@
 us_name,team,score,suggested_fpl_names,suggested_fpl_teams
-Guemissongui Ouattara,Ipswich Town,0.5294117647058824,Dango Ouattara | Georginio Rutter | Abdoul Ouattara,Brentford | Brighton | Ipswich Town
-Costinha,Brighton,0.45454545454545453,Ola Aina | Christian Walton | Josh King,Nott'm Forest | Ipswich Town | Fulham
-António Silva,Bournemouth,0.48,Antoni Milambo | Anton Stach | Anthony Elanga,Brentford | Leeds | Newcastle
-Vitor Reis,Man City,0.5555555555555556,Viktor Gyökeres | Pau Torres | Victor Torp,Arsenal | Aston Villa | Coventry City
 Ibrahima Konaté,Liverpool,0.41379310344827586,Ibrahim Sangaré | Ibrahim Osman | Ian Maatsen,Nott'm Forest | Brighton | Aston Villa
 Mohamed Salah,Liverpool,0.4166666666666667,Mohamed-Ali Cho | Mohammed Kudus | Mohamed Belloumi,Hull City | Spurs | Hull City
-Hamed Junior Traore,Bournemouth,0.5517241379310345,Junior Kroupi | James Trafford | Thomas Meunier,Bournemouth | Leeds | Sunderland
+Hamed Junior Traore,Bournemouth,0.5517241379310345,Junior Kroupi | Thomas Meunier | James Trafford,Bournemouth | Sunderland | Leeds
 Ben Winterburn,Bournemouth,0.38461538461538464,Sean Steur | Ben Wilson | Benjamin White,Newcastle | Coventry City | Arsenal
 Donyell Malen,Aston Villa,0.45454545454545453,Anthony Elanga | Nobel Mendy | Darnell Furlong,Newcastle | Hull City | Ipswich Town
-Kieran Trippier,Newcastle,0.4444444444444444,Kieran Dowell | Jurriën Timber | Kai Andrews,Hull City | Arsenal | Coventry City
+Kieran Trippier,Newcastle,0.4444444444444444,Kieran Dowell | Jurriën Timber | Adrien Truffert,Hull City | Arsenal | Bournemouth
 Anthony Gordon,Newcastle,0.6153846153846154,Anthony Patterson | Anthony Elanga | Antonee Robinson,Sunderland | Newcastle | Fulham
-Brajan Gruda,Brighton,0.43478260869565216,Ibrahim Sangaré | Brian Madjo | Jack Rudoni,Nott'm Forest | Aston Villa | Coventry City
+Brajan Gruda,Brighton,0.43478260869565216,Ibrahim Sangaré | Brian Madjo | Rio Ngumoha,Nott'm Forest | Aston Villa | Liverpool
 James Milner,Brighton,0.47619047619047616,James Garner | James Hill | James Maddison,Everton | Bournemouth | Spurs
 Raúl Jiménez,Fulham,0.43478260869565216,Arnaud Kalimuendo | Trai Hume | Aurèle Amenda,Nott'm Forest | Sunderland | Coventry City
-Adama Traoré,Fulham,0.45454545454545453,Adam Wharton | Dara O'Shea | Adam Aznou,Crystal Palace | Ipswich Town | Everton
+Adama Traoré,Fulham,0.45454545454545453,Adam Wharton | Dara O'Shea | Abu Kamara,Crystal Palace | Ipswich Town | Hull City
 Eliezer Mayenda,Sunderland,0.4827586206896552,Daizen Maeda | Aurèle Amenda | Geovany Quenda,Ipswich Town | Coventry City | Chelsea
 João Palhinha,Spurs,0.5185185185185185,Ola Aina | Jan Paul van Hecke | Josh King,Nott'm Forest | Spurs | Fulham
-John Stones,Man City,0.5,Ben Johnson | Brennan Johnson | Jason Steele,Ipswich Town | Everton | Brighton
+John Stones,Man City,0.5,Ben Johnson | Brennan Johnson | Jenson Seelt,Ipswich Town | Everton | Sunderland
 Bernardo Silva,Man City,0.45,Borna Sosa | Jay Dasilva | Emersonn Correia da Silva,Crystal Palace | Coventry City | Ipswich Town
 Marc Cucurella,Chelsea,0.5833333333333334,Marc Guiu Paz | Marcus Bettinelli | Marc Guéhi,Chelsea | Man City | Man City
 Andrey Santos,Chelsea,0.45454545454545453,Andrey Nascimento dos Santos | Yéremy Pino Santos | Andrés García,Man Utd | Crystal Palace | Aston Villa
@@ -27,33 +23,37 @@ Nathan Aké,Man City,0.48,Nathan Patterson | Tanaka Ao | Ethan Nwaneri,Everton |
 Patrick Roberts,Sunderland,0.46153846153846156,Andrew Robertson | Patrick Dorgu | Pau Torres,Spurs | Man Utd | Aston Villa
 Leandro Trossard,Arsenal,0.43243243243243246,Sandro Tonali | Alexander Isak | Pedro Porro Sauceda,Spurs | Liverpool | Spurs
 Sam Byram,Leeds,0.4,Tammy Abraham | Óscar Zambrano | Jacob Ramsey,Aston Villa | Hull City | Newcastle
-Odsonne Edouard,Crystal Palace,0.35714285714285715,Joe Gelhardt | Rodrigo Bentancur | Promise David,Hull City | Spurs | Brighton
+Odsonne Edouard,Crystal Palace,0.35714285714285715,Joe Gelhardt | Rodrigo Bentancur | Wilson Isidor,Hull City | Spurs | Sunderland
 Seamus Coleman,Everton,0.41379310344827586,Sven Botman | Emmanuel Emegha | Levi Samuels Colwill,Newcastle | Chelsea | Chelsea
 Joël Veltman,Brighton,0.45454545454545453,Joél Drakes-Thomas | Sven Botman | Youri Tielemans,Crystal Palace | Newcastle | Man Utd
 Nathaniel Clyne,Crystal Palace,0.4666666666666667,Nathan Collins | Nathan Patterson | Mathias Jensen,Brentford | Everton | Brentford
 Alejandro Jiménez,Bournemouth,0.5161290322580645,Lisandro Martínez | Walter Benítez | Alexander Isak,Man Utd | Crystal Palace | Liverpool
-Lutsharel Geertruida,Sunderland,0.4375,Aurèle Amenda | Lucas Estella Perri | Claudio Echeverri,Coventry City | Leeds | Man City
+Lutsharel Geertruida,Sunderland,0.4375,Aurèle Amenda | Lucas Estella Perri | Harvey Cartwright,Coventry City | Leeds | Hull City
 Oleksandr Zinchenko,Nott'm Forest,0.47058823529411764,Lisandro Martínez | Alexander Isak | Declan Rice,Man Utd | Liverpool | Arsenal
 Douglas Luiz,Nott'm Forest,0.4444444444444444,Saša Lukić | Darko Gyabi | Abdul Fatawu,Ipswich Town | Hull City | Ipswich Town
 Jamaal Lascelles,Newcastle,0.42857142857142855,Max Alleyne | James McConnell | Matz Sels,Man City | Liverpool | Nott'm Forest
-Dan Neil,Sunderland,0.5714285714285714,Dan Ndoye | Danny Welbeck | Dayann Méthalie,Nott'm Forest | Chelsea | Sunderland
-Jadon Sancho,Aston Villa,0.5454545454545454,Jaidon Anthony | Anton Stach | Juanlu Sánchez,Brentford | Leeds | Bournemouth
+Dan Neil,Sunderland,0.5714285714285714,Dan Ndoye | Danny Welbeck | Dan Bentley,Nott'm Forest | Chelsea | Coventry City
+Jadon Sancho,Aston Villa,0.5454545454545454,Jaidon Anthony | Juanlu Sánchez | Anton Stach,Brentford | Bournemouth | Leeds
 Bertrand Traoré,Sunderland,0.4,Bendito Mantato | Kieran Dowell | Ben Davies,Man Utd | Hull City | Spurs
-Samuel Chukwueze,Fulham,0.38461538461538464,Levi Samuels Colwill | James McAtee | Eberechi Eze,Chelsea | Nott'm Forest | Arsenal
+Samuel Chukwueze,Fulham,0.38461538461538464,Levi Samuels Colwill | Eberechi Eze | James McAtee,Chelsea | Arsenal | Nott'm Forest
 Randal Kolo Muani,Spurs,0.5,Brandon Thomas-Asante | Brandon Austin | Pedro Lomba Neto,Coventry City | Spurs | Chelsea
 Joe Knight,Brighton,0.47619047619047616,Joe Gelhardt | Josh King | Jorrel Hato,Hull City | Fulham | Chelsea
 Emil Krafth,Newcastle,0.47619047619047616,Remi Matthews | Emile Smith Rowe | Miguel Brau,Crystal Palace | Fulham | Coventry City
-Aaron Ramsdale,Newcastle,0.5833333333333334,Jacob Ramsey | Aaron Wan-Bissaka | Calvin Ramsay,Newcastle | Aston Villa | Liverpool
-Tyrell Malacia,Man Utd,0.45454545454545453,Roméo Lavia | Tyrone Mings | Reinildo Mandava,Chelsea | Aston Villa | Sunderland
-Dennis Cirkin,Sunderland,0.4166666666666667,Will Dennis | Antonín Kinský | Dean Henderson,Bournemouth | Spurs | Crystal Palace
+Aaron Ramsdale,Newcastle,0.5833333333333334,Jacob Ramsey | Aaron Wan-Bissaka | Carlos Baleba,Newcastle | Aston Villa | Man Utd
+Tyrell Malacia,Man Utd,0.45454545454545453,Roméo Lavia | Malick Thiaw | Tyrone Mings,Chelsea | Newcastle | Aston Villa
+Dennis Cirkin,Sunderland,0.4166666666666667,Will Dennis | Dean Henderson | Antonín Kinský,Bournemouth | Crystal Palace | Spurs
 Jamaldeen Jimoh,Aston Villa,0.5,Joachim Andersen | Jayden Lienou | Jaydee Canvot,Fulham | Leeds | Crystal Palace
-Kaden Rodney,Crystal Palace,0.5,Hayden Hackney | Jaden Philogene | Aaron Hickey,Everton | Ipswich Town | Brentford
-Myles Peart-Harris,Brentford,0.41379310344827586,Leo Shahar | Mark Travers | Myles Lewis-Skelly,Newcastle | Everton | Arsenal
+Kaden Rodney,Crystal Palace,0.5,Hayden Hackney | Jaden Philogene | Jayden Danns,Everton | Ipswich Town | Liverpool
+Myles Peart-Harris,Brentford,0.41379310344827586,Leo Shahar | Mark Travers | Pep Chavarría,Newcastle | Everton | Chelsea
 Romelle Donovan,Brentford,0.4,Roméo Lavia | Freddie Woodman | Amadou Onana,Chelsea | Liverpool | Aston Villa
-Yves Bissouma,Spurs,0.4,Lewis Koumas | Sven Botman | Yoane Wissa,Liverpool | Newcastle | Newcastle
+Yves Bissouma,Spurs,0.4,Lewis Koumas | Yoane Wissa | Sven Botman,Liverpool | Newcastle | Newcastle
 Douglas Luiz,Aston Villa,0.38095238095238093,Saša Lukić | Darko Gyabi | Abdul Fatawu,Ipswich Town | Hull City | Ipswich Town
 Angus Gunn,Nott'm Forest,0.4,Evan Ferguson | Evann Guessand | Dan Burn,Brighton | Crystal Palace | Newcastle
 Stefan Ortega Moreno,Nott'm Forest,0.4375,Tino Livramento | Stefanos Tzimas | Senne Lammens,Newcastle | Brighton | Man Utd
 Lorenzo Lucca,Nott'm Forest,0.4,Leon Goretzka | Borna Sosa | Enzo Le Fée,Aston Villa | Crystal Palace | Sunderland
-Solly March,Brighton,0.4,Omar Richards | Luka Lynch | Marc Guéhi,Nott'm Forest | Aston Villa | Man City
-Jesse Derry,Chelsea,0.47619047619047616,Jenson Seelt | Djed Spence | James Garner,Sunderland | Spurs | Everton
+Solly March,Brighton,0.4,Omar Richards | Marc Guéhi | Luka Lynch,Nott'm Forest | Man City | Aston Villa
+Jesse Derry,Chelsea,0.47619047619047616,Jenson Seelt | Djed Spence | Sander Berge,Sunderland | Spurs | Fulham
+Guemissongui Ouattara,Ipswich Town,0.5294117647058824,Dango Ouattara | Georginio Rutter | Abdoul Ouattara,Brentford | Brighton | Ipswich Town
+Costinha,Brighton,0.45454545454545453,Ola Aina | Christian Walton | Nicolò Savona,Nott'm Forest | Ipswich Town | Nott'm Forest
+António Silva,Bournemouth,0.48,Antoni Milambo | Anton Stach | Anthony Elanga,Brentford | Leeds | Newcastle
+Vitor Reis,Man City,0.5555555555555556,Viktor Gyökeres | Pau Torres | Victor Torp,Arsenal | Aston Villa | Coventry City

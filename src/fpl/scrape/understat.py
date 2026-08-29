@@ -96,15 +96,20 @@ def _process_shots(shots: list[dict], match_id: int) -> pd.DataFrame:
     # Running score per shot, resetting if a new match's shots start mid-list.
     home_goals = 0
     away_goals = 0
-    previous_minute = 0
+    previous_h_minute = 0
+    previous_a_minute = 0
     for index, row in shots_df.iterrows():
-        if row["minute"] < previous_minute:
-            home_goals = 0
-            away_goals = 0
+        # if row["minute"] < previous_minute:
+        #     home_goals = 0
+        #     away_goals = 0
         shots_df.at[index, "h_score"] = home_goals
         shots_df.at[index, "a_score"] = away_goals
-        shots_df.at[index, "mins_passed"] = row["minute"] - previous_minute
-        previous_minute = row["minute"]
+        if row["h_a"] == "h":
+            shots_df.at[index, "mins_passed"] = row["minute"] - previous_h_minute
+            previous_h_minute = row["minute"]
+        else:
+            shots_df.at[index, "mins_passed"] = row["minute"] - previous_a_minute
+            previous_a_minute = row["minute"]
 
         if row["h_a"] == "h":
             if row["result"] == "Goal":
@@ -116,6 +121,48 @@ def _process_shots(shots: list[dict], match_id: int) -> pd.DataFrame:
                 away_goals += 1
             elif row["result"] == "OwnGoal":
                 home_goals += 1
+
+    # If the minute of either team's last shot is less than 90, add another row with xg = 0 and shot_num = 0 with the remaining minutes
+    if previous_h_minute < 90:
+        shots_df = pd.concat([
+            shots_df,
+            pd.DataFrame([{
+                "match_id": match_id,
+                "minute": np.max([previous_a_minute, 90]),
+                "xg": 0,
+                "shot_num": 0,
+                "shotontarget_num": 0,
+                "goal": 0,
+                "h_a": "h",
+                "h_score": home_goals,
+                "a_score": away_goals,
+                "mins_passed": 90 - previous_h_minute,
+                "h_team": shots_df["h_team"].iloc[0],
+                "a_team": shots_df["a_team"].iloc[0],
+                "result": "NoShots"
+            }])
+        ], ignore_index=True)
+
+    if previous_a_minute < 90:
+        shots_df = pd.concat([
+            shots_df,
+            pd.DataFrame([{
+                "match_id": match_id,
+                "minute": np.max([previous_h_minute, 90]),
+                "xg": 0,
+                "shot_num": 0,
+                "shotontarget_num": 0,
+                "goal": 0,
+                "h_a": "a",
+                "h_score": home_goals,
+                "a_score": away_goals,
+                "mins_passed": 90 - previous_a_minute,
+                "h_team": shots_df["h_team"].iloc[0],
+                "a_team": shots_df["a_team"].iloc[0],
+                "result": "NoShots"
+            }])
+        ], ignore_index=True)
+    
 
     shots_df["h_gamestate"] = np.select(
         [shots_df["h_score"] > shots_df["a_score"], shots_df["h_score"] < shots_df["a_score"]],
