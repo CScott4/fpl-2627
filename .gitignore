@@ -12,7 +12,7 @@ dist/
 # Data
 data/*.db
 data/*.sqlite
-data/fpl_token.json
+data/*.json
 
 # Jupyter
 .ipynb_checkpoints/
