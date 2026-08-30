@@ -23,6 +23,49 @@ FPL_PICKS_URL_TEMPLATE = (
     "https://fantasy.premierleague.com/api/entry/{entry_id}/event/{event_id}/picks/"
 )
 
+# Optional: only needed for fpl.squad.my_team.fetch_my_team, which fetches
+# your *actual* sale prices for transfer planning. These are your
+# fantasy.premierleague.com login, used to authenticate against the
+# unofficial `/api/my-team/` endpoint (see fpl.squad.my_team for
+# details/caveats). Leave unset and the notebook falls back to the public
+# picks endpoint (approximating budget from live prices instead of sale
+# prices).
+FPL_EMAIL: str | None = os.getenv("FPL_EMAIL") or None
+FPL_PASSWORD: str | None = os.getenv("FPL_PASSWORD") or None
+FPL_LOGIN_URL = "https://account.premierleague.com/as/"
+FPL_MY_TEAM_URL_TEMPLATE = "https://fantasy.premierleague.com/api/my-team/{entry_id}/"
+
+# ---------------------------------------------------------------------------
+# FPL API
+# ---------------------------------------------------------------------------
+
+FPL_API_BASE_URL = "https://fantasy.premierleague.com/api"
+FPL_MY_TEAM_URL_TEMPLATE = (
+    f"{FPL_API_BASE_URL}/my-team/{{entry_id}}/"
+)
+# Your FPL manager/team ID
+FPL_ENTRY_ID = os.getenv("FPL_ENTRY_ID")
+
+# ---------------------------------------------------------------------------
+# FPL OAuth / OIDC
+# ---------------------------------------------------------------------------
+
+FPL_OIDC_BASE_URL = "https://account.premierleague.com/as"
+FPL_AUTHORIZE_URL = (
+    f"{FPL_OIDC_BASE_URL}/authorize"
+)
+FPL_TOKEN_URL = (
+    f"{FPL_OIDC_BASE_URL}/token"
+)
+FPL_CLIENT_ID = "bfcbaf69-aade-4c1b-8f00-c1cb8a193030"
+FPL_REDIRECT_URI = "https://fantasy.premierleague.com/"
+FPL_SCOPE = "openid profile email offline_access"
+
+# Where we keep the refresh token locally.
+# Make sure this is in .gitignore.
+FPL_TOKEN_FILE = Path(__file__).resolve().parents[1] / "data" / "fpl_token.json"
+
+
 # --- Understat -----------------------------------------------------------
 UNDERSTAT_SEASON: int = int(os.getenv("UNDERSTAT_SEASON", "2026"))
 UNDERSTAT_LEAGUE = "EPL"
