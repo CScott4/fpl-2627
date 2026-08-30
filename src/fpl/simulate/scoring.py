@@ -29,6 +29,7 @@ GOAL_POINTS = {"GKP": 10, "DEF": 6, "MID": 5, "FWD": 4}
 CLEAN_SHEET_POINTS = {"GKP": 4, "DEF": 4, "MID": 1, "FWD": 0}
 SAVES_PER_POINT = 3         # 1 point per 3 saves, goalkeepers only
 GOALS_CONCEDED_PER_POINT_LOSS = 2  # -1 point per 2 goals conceded, GKP/DEF only
+DEFCONS_FOR_2_POINTS = {"DEF": 10, "MID": 12}
 
 # TODO: Implement defensive contribution points
 # For defenders: 2 points for accumulating 10 clearances, blocks, interceptions, and tackles
@@ -55,6 +56,7 @@ def calc_fantasy_points(
     saves: int,
     yellow_cards: int,
     red_cards: int,
+    defcons: int,
 ) -> float:
     """Compute FPL points for one player's match statline.
 
@@ -71,6 +73,9 @@ def calc_fantasy_points(
     points += yellow_cards * POINTS_PER_YELLOW
     points += red_cards * POINTS_PER_RED
     points += goals * GOAL_POINTS.get(position, 0)
+    if position in DEFCONS_FOR_2_POINTS:
+        if defcons >= DEFCONS_FOR_2_POINTS[position]:
+            points += 2
 
     if clean_sheet:
         points += CLEAN_SHEET_POINTS.get(position, 0)

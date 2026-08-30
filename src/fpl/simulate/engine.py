@@ -40,7 +40,7 @@ from fpl.config import FPL_BOOTSTRAP_URL, FPL_FIXTURES_URL
 from fpl.db import read_table
 from fpl.simulate.scoring import calc_fantasy_points
 
-STATS = ["minutes", "goals", "assists", "clean_sheet", "saves", "goals_conceded", "yellow_cards", "red_cards", "points"]
+STATS = ["minutes", "goals", "assists", "clean_sheet", "saves", "goals_conceded", "yellow_cards", "red_cards", "defcons", "points"]
 _STAT_IDX = {stat: i for i, stat in enumerate(STATS)}
 
 
@@ -75,6 +75,7 @@ def _load_player_pool() -> pd.DataFrame:
     players["goals_scored"] = pd.to_numeric(players["goals_scored"])
     players["saves_per_90"] = pd.to_numeric(players["saves_per_90"])
     players["chance_of_playing_next_round"] = players["chance_of_playing_next_round"].fillna(100.0)
+    players['defcons_per_90'] = pd.to_numeric(players['defensive_contribution']) / pd.to_numeric(players['minutes']).replace(0, 1) * 90
 
     player_reference = read_table("player_reference")[["fpl_code", "us_id"]]
     understat_stats = read_table("understat_player_stats").add_prefix("us_")
@@ -174,6 +175,7 @@ class _Pool:
         self.yellows_per_min = pool["yellows_per_min"].to_numpy()
         self.reds_per_min = pool["reds_per_min"].to_numpy()
         self.saves_per_90 = pool["saves_per_90"].to_numpy()
+        self.defcons_per_90 = pool["defcons_per_90"].to_numpy()
         self.n_players = len(pool)
         self.team_to_indices = {team: np.where(self.team == team)[0].tolist() for team in pool["team"].unique()}
 
@@ -191,7 +193,8 @@ def _select_starting_lineup(indices: list[int], pool: _Pool) -> list[int]:
 
 def _generate_subs(indices: list[int], starting: list[int], pool: _Pool) -> tuple[list[int], list[float], list[int]]:
     """Pick which starters get subbed off (and when) and who replaces them."""
-    start_times = [np.ceil(np.random.exponential(max(pool.start_mins[i] - 45, 0.0)) + 45) for i in starting]
+    # start_times = [np.ceil(np.random.exponential(max(pool.start_mins[i] - 45, 0.0)) + 45) for i in starting]
+    start_times = [max(90 - np.random.poisson(max(90 - pool.start_mins[i], 0.0)), 45) for i in starting]
     subs_off, sub_minutes = [], []
     for position in np.argsort(start_times):
         if start_times[position] < 90 and len(subs_off) < 5:
@@ -301,6 +304,8 @@ def _simulate_match(
             stats[i, _STAT_IDX["clean_sheet"]] = 1
         if pool.saves_per_90[i] > 0 and minutes > 0:
             stats[i, _STAT_IDX["saves"]] = np.random.poisson(pool.saves_per_90[i] * minutes / 90)
+        if pool.defcons_per_90[i] > 0 and minutes > 0:
+            stats[i, _STAT_IDX["defcons"]] = np.random.poisson(pool.defcons_per_90[i] * minutes / 90)
 
         stats[i, _STAT_IDX["points"]] = calc_fantasy_points(
             position=pool.position[i],
@@ -312,6 +317,7 @@ def _simulate_match(
             saves=int(stats[i, _STAT_IDX["saves"]]),
             yellow_cards=int(stats[i, _STAT_IDX["yellow_cards"]]),
             red_cards=int(stats[i, _STAT_IDX["red_cards"]]),
+            defcons=int(stats[i, _STAT_IDX["defcons"]]),
         )
 
     return stats, home_score, away_score
