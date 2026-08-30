@@ -12,7 +12,7 @@ dist/
 # Data
 data/*.db
 data/*.sqlite
-data/*.json
+src/data/*.json
 
 # Jupyter
 .ipynb_checkpoints/
