@@ -25,12 +25,25 @@ POINTS_PER_YELLOW = -1
 POINTS_PER_RED = -3
 
 # Position-dependent points: goals scored and clean sheets.
-# TODO: verify against current-season FPL rules before use.
 GOAL_POINTS = {"GKP": 10, "DEF": 6, "MID": 5, "FWD": 4}
 CLEAN_SHEET_POINTS = {"GKP": 4, "DEF": 4, "MID": 1, "FWD": 0}
 SAVES_PER_POINT = 3         # 1 point per 3 saves, goalkeepers only
 GOALS_CONCEDED_PER_POINT_LOSS = 2  # -1 point per 2 goals conceded, GKP/DEF only
 
+# TODO: Implement defensive contribution points
+# For defenders: 2 points for accumulating 10 clearances, blocks, interceptions, and tackles
+# For MID/FWD: 2 points for accumulating 12 clearances, blocks, interceptions, tackles, AND RECOVERIES
+# These points don't stack e.g. a defender doesn't get 4 points for 20 clearances, blocks, interceptions, and tackles
+
+# TODO: Other points to implement (which would be more difficult to simulate):
+# - Bonus points (BPS)
+# - Penalty saves
+# - Penalty misses
+# - Own goals
+
+# TODO: Check that players who play 60+ minutes and were subbed off before a goal was conceded are still being awarded clean sheet points
+
+# TODO: Check that red cards for two yellows are simulated and that the player only gets the red card reduction in that case
 
 def calc_fantasy_points(
     position: str,
